@@ -1,0 +1,89 @@
+<div class="modal fade" id="ticket" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content " style="background: #EFF7F1">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title font-weight-bold" id="exampleModalScrollableTitle">Asignacion de Ticket <i class="fas fa-user-plus"></i></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="idformulario" name="idformulario" method="POST" action="{% url 'crearPersona' %}">{% csrf_token %}
+                <div class="modal-body">
+                    <div>
+                        <label class="badge badge-danger">Datos generales</label>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{fT.fechaInicio.name}}">{{fT.fechaInicio.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+                                {{fT.fechaInicio}}
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{fT.fechaFin.name}}">{{fT.fechaFin.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-info"></i></span>
+                                {{fT.fechaFin}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{fT.horaInicio.name}}">{{fT.horaInicio.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                {{fT.horaInicio}}
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{fT.horaFin.name}}">{{fT.horaFin.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                                {{fT.horaFin}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{fT.costoHora.name}}">{{fT.costoHora.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-info"></i></span>
+                                {{fT.costoHora}}
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{fT.costoTotal.name}}">{{fT.costoTotal.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                                {{fT.costoTotal}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="{% url 'listaPersona' %}" class="btn btn-danger">Cancelar</a>
+                    <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        var date = new Date(),
+            m = ("0" + (date.getMonth() + 1)).slice(-2),
+            d = ("0" + date.getDate()).slice(-2);
+        var fecha = ([date.getFullYear(), m, d].join("-"));
+        $("#id_fechaInicio").val(fecha);
+        $("#id_fechaFin").val($("#id_fechaInicio").val());
+        $("#id_fechaInicio").attr({
+            //    "max" : 10,        // substitute your own
+            "min": fecha // values (or variables) here
+        });
+        $("#id_fechaFin").attr({
+            //    "max" : 10,        // substitute your own
+            "min": $("#id_fechaInicio").val() // values (or variables) here
+        });
+    });
+</script>

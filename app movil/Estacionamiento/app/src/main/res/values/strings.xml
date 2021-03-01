@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Estacionamiento</string>
+    <string name="text_button_login">Ingresar</string>
+    <string name="hint_nameuser">Nombre de usuario</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="notiene_cuenta">No tiene cuenta?.</string>
+    <string name="crear_cuenta">Crear cuenta</string>
+    <string name="hint_cedula">Cedula</string>
+    <string name="hint_nombre">Nombre</string>
+    <string name="hint_apellido">Apellidos</string>
+    <string name="hint_celular">Celular</string>
+    <string name="hint_confirmarPassword">Confirmar Contraseña</string>
+    <string name="text_button_crear">Crear Cuenta</string>
+    <string name="hint_correo">Correo</string>
+    <string name="hint_direccion">Direccion</string>
+    <string name="user_location_permission_explanation">Permiso consedido</string>
+    <string name="user_location_permission_not_granted">Permiso denegado</string>
+    <string name="start_navigation">Start Navigation</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoieXVrYXNtaW5hIiwiYSI6ImNrNzZyM3VhYTAwZmkzZW1rcWFjZDZybGIifQ.Y-DnJhWF-oBA6aPaZGVKOg</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_nro_placa">Nro Placa</string>
+    <string name="hint_color">Color</string>
+    <string name="hint_marca">Marca</string>
+    <string name="ip_actual">IP Actual</string>
+    <string name="nueva_ip">Nueva IP:</string>
+    <string name="title_activity_registro">registroActivity</string>
+    <string name="tab_text_1">Perfil</string>
+    <string name="tab_text_2">Cuenta</string>
+    <string name="tab_text_3">Vehiculo</string>
+    <string name="Cuenta">Cuenta</string>
+    <string name="text_perfil">Perfil</string>
+    <string name="text_configuracion">Configuración</string>
+    <string name="text_salir">Salir</string>
+    <string name="text_cuenta">Cuenta</string>
+    <string name="text_actualizar">Actualizar</string>
+    <string name="text_cancelar">Cancelar</string>
+    <string name="hint_fecha">Fecha Ini</string>
+    <string name="hint_fechaini">Fecha Inicio</string>
+    <string name="hint_fechafin">Fecha Fin</string>
+    <string name="hint_horaInicio">Hora Inicio</string>
+    <string name="hint_horaFin">Hora Fin</string>
+    <string name="hint_costoHora">Costo Hora</string>
+    <string name="hint_costoTotal">Costo Total</string>
+    <string name="text_button_guardar">Guardar</string>
+</resources>

@@ -1,0 +1,56 @@
+{% extends 'principal/index.html' %}
+
+{% block content %}
+<script>
+    $(document).ready(function () {
+        validar();
+    });
+</script>
+{% include 'persona/AgregarPersona.html' %}
+{% include 'persona/ModificarPersona.html' %}
+       <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Cliente
+                    <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#agregarCliente">Registrar Cliente <i class="fas fa-plus-circle"></i></a></h3>
+            </div>
+        </div>
+<div class="card">
+    {% comment %} <div class="card-header ">
+        <h4 class="card-title">Lista Clientes <a href="#agregarCliente" data-toggle="modal" class="btn btn-primary btn-sm">Crear Cliente</a> </h4>
+    </div> {% endcomment %}
+    <div class="card-body">
+        <!--para poder visualizar enviados por url seutiliza  doble llave para los otros llave simple-->
+        <div class="table-responsive">
+        <table class="table" id="personasTable">
+            <thead>
+                <tr>
+                    <th>Cédula</th>
+                    <th>Apellidos</th>
+                    <th>Nombres</th>
+                    <th>Telefono</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in lista %}
+                <tr>
+                    <td>{{c.cedula}} </td>
+                    <td>{{c.apellidos}} </td>
+                    <td>{{c.nombres}} </td>
+                    <td>{{c.telefono}} </td>
+                    <td>
+                        <div class="btn-group">
+                            <a href="#" data-toggle="modal" data-target="#modificaPersona" data-tooltip="tooltip" data-placement="top" title="Editar" class="btn btn-primary btn-sm" onclick="cargardatosPersona('{{c.cedula}}')"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="btn-group">
+                            <a href=" {% url 'vehiculo' cedulaP=c.cedula %}" data-tooltip="tooltip" data-placement="top" title="Registro Vehiculo" class="btn btn-danger btn-sm" ><i class="fas fa-car-side"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

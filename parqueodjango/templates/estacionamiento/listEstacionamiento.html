@@ -1,0 +1,107 @@
+{% extends 'principal/index.html' %}
+
+{% block content %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#estac").click(function () {
+            console.log("llega");
+            cargardatoEsta($(this).val())
+        })
+    });
+</script>
+{% include 'estacionamiento/detalle.html' %}
+{% include 'estacionamiento/ticket.html' %}
+{% include 'estacionamiento/registroEstac.html' %}
+{% include 'estacionamiento/registroSitio.html' %}
+<div class="row ">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header ">
+                <div class="form-group">
+                    <h4 class="card-title">Estacionamientos </h4>
+                    <a name="" id="btnEstac" class="btn btn-primary" href="#agregarEstac" data-toggle="modal" role="button">Nuevo estacionamiento</a>
+                    {% comment %} <label for="">Estacionamientos</label> {% endcomment %}
+                    <select class="form-control" name="estac" id="estac">
+                        <option value="0">--Seleccione---</option>
+                        {% for c in lista%}
+                        <option value="{{c.estacion_id}}">{{c.nombre}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label class="control-label" for="localE">Localizacion</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+                        <input type="text" class="form-control" name="localE" id="localE" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="localE">Calle Principal</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+                        <input type="text" class="form-control" name="callepE" id="callepE" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="localE">Calle Secundaria</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+                        <input type="text" class="form-control" name="callesE" id="callesE" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="">Telefono</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-info"></i></span>
+                        <input type="text" class="form-control" name="telefonoE" id="telefonoE" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="">Celular</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-info"></i></span>
+                        <input type="text" class="form-control" name="celularE" id="celularE" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#estac").change(function () {
+                $("#btnSitio").show();
+            });
+        });
+
+    </script>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header ">
+                <div class="form-group col-md-4" id="btnSitio" style="display: none;">
+                    <h4 class="card-title">Sitios </h4>
+                    <a name="" id="" class="btn btn-primary" href="#agregarSitio" data-toggle="modal" href="#" role="button">Agregar sitio</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <!--para poder visualizar enviados por url seutiliza  doble llave para los otros llave simple-->
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Número</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodySitio">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

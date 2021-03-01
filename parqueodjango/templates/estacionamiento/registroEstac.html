@@ -1,0 +1,101 @@
+<div class="modal fade" id="agregarEstac" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+        <div class="modal-content " style="background: #EFF7F1">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title font-weight-bold" id="exampleModalScrollableTitle">Nuevo estacionamiento <i class="fas fa-user-plus"></i></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form id="idformularioEsta" name="idformularioEsta" method="POST" action="{% url 'crearEstacioamiento' %}">{% csrf_token %}
+                    <div>
+                        <label class="badge badge-danger">Datos Ticket</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label" for="{{fC.nombre.name}}">{{fC.nombre.label}}</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-credit-card"></i></span> {{fC.nombre}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="{{fC.localizacion.name}}">{{fC.localizacion.label}}</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-credit-card"></i></span> {{fC.localizacion}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="{{fC.latitud.name}}">{{fC.latitud.label}}</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-credit-card"></i></span> {{fC.latitud}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="{{fC.longitud.name}}">{{fC.longitud.label}}</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-credit-card"></i></span> {{fC.longitud}}
+                                </div>
+                            </div>
+
+                        </div>
+                        <div clas="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label" for="{{fC.calle_primaria.name}}">{{fC.loncalle_primariagitud.label}}</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-credit-card"></i></span> {{fC.calle_primaria}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="{{fC.calle_secundaria.name}}">{{fC.calle_secundaria.label}}</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-credit-card"></i></span> {{fC.calle_secundaria}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="{{fC.telefono.name}}">{{fC.telefono.label}}</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-credit-card"></i></span> {{fC.telefono}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="{{fC.celular.name}}">{{fC.celular.label}}</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-credit-card"></i></span> {{fC.celular}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div id='map' style='width: 390px; height: 400px;' class="card"></div>
+                            <script>
+                                mapboxgl.accessToken = 'pk.eyJ1IjoieXVrYXNtaW5hIiwiYSI6ImNrNzZyM3VhYTAwZmkzZW1rcWFjZDZybGIifQ.Y-DnJhWF-oBA6aPaZGVKOg';
+                                var map = new mapboxgl.Map({
+                                    container: 'map',
+                                    style: 'mapbox://styles/mapbox/streets-v11',
+                                    center: [-79.2074326, -3.9999739],
+                                    zoom: 15
+                                });
+                                map.addControl(new mapboxgl.NavigationControl());
+                                map.addControl(new mapboxgl.FullscreenControl()); { % comment %
+                                }
+                                map.addControl(new mapboxgl.GeolocateControl({
+                                    positionOptions: {
+                                        enableHighAccuracy: true
+                                    },
+                                    trackUserLocation: true
+                                })); { % endcomment %
+                                }
+                            </script>
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <a href="{% url 'listaEstacionamineto' %}" class="btn btn-danger">Cancelar</a>
+                <button type="submit" class="btn btn-primary" id="btnGuardarEsta">Guardar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0280EE</color>
+    <color name="colorPrimaryFont">#FAF8F8</color>
+    <color name="colorPrimaryDark">#99B0CD</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="EditTextColorWhite">#FFFFFF</color>
+    <color name="EditTextColorVerde">#145E03</color>
+    <color name="EditTextColorAzul">#3663EB</color>
+    <color name="EditTextColorRojo">#8E0F0F</color>
+    <color name="backgraund_text_card">#53292929</color>
+    <color name="backgraund_whit_transp">#7FF806</color>
+    <color name="backgraund_whit_blanco">#17AE0C</color>
+    <color name="backgraund_black">#0E0D0D</color>
+
+</resources>

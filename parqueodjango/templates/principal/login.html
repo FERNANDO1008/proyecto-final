@@ -1,0 +1,25 @@
+{% extends 'principal/index.html' %}
+{% block content %}
+<style>
+    .card {
+        margin: 0 auto;
+        /* Added */
+        float: none;
+        /* Added */
+        margin-bottom: 10px;
+        /* Added */
+    }
+</style>
+<div class="card border-success mb-3" style="max-width: 18rem;">
+    <div class="card-header  border-success"> <h5 class="card-title">Iniciar Sesion</h5></div>
+    <form id="idinicio" method="POST" action="">{% csrf_token %}
+        <div class="card-body">
+            {{fl.as_p}}
+        </div>
+        <div class="card-footer border-success">
+            <a href="{% url 'home_page'%}" class="btn btn-danger" data-dismiss="modal">Cancelar</a>
+            <button type="submit" class="btn btn-primary">Acceder</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

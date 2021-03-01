@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="360dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:padding="@dimen/activity_horizontal_margin"
+        app:cardBackgroundColor="@color/design_default_color_background"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageIdArtista"
+                android:layout_width="2dp"
+                android:layout_height="90dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_car_black_24dp"
+                android:tag="image_tag" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/idItemDato"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Detalle Vehiculo"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/ItemNro_placa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp"
+                    android:text="Nombre"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/ItemMarca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp"
+                    android:text="Nombre"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/ItemColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp"
+                    android:text="Costo"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="15dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

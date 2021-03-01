@@ -1,0 +1,43 @@
+<div class="modal fade" id="agregarSitio" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content " style="background: #EFF7F1">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title font-weight-bold" id="exampleModalScrollableTitle">Nuevo sitio <i class="fas fa-solar-panel"></i></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="idformularioSitio" name="idformularioSitio" method="POST" action="{% url 'crearSitio' %}">{% csrf_token %}
+                <div class="modal-body">
+                    <div>
+                        <label class="badge badge-danger">Datos generales</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-md">
+                            <input type="text" value="0" id="id_Estacionamiento" name="id_Estacionamiento">
+                            <div class="form-group">
+                                <label class="control-label" for="{{fS.numero.name}}">{{fS.numero.label}}</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+                                    {{fS.numero}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="{{fS.estado.name}}">{{fS.estado.label}}</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+                                    {{fS.estado}}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="{% url 'listaEstacionamineto' %}" class="btn btn-danger">Cancelar</a>
+                    <button type="submit" class="btn btn-primary" id="btnGuardarsitio">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

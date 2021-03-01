@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".vista.Actividades.mapbox">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.mapbox.mapboxsdk.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            mapbox:mapbox_cameraTargetLat="-4.000101"
+            mapbox:mapbox_cameraTargetLng="-79.207328"
+            mapbox:mapbox_cameraZoom="15" />
+
+        <TextView
+            android:id="@+id/txtNombreUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:background="@color/colorPrimaryDark"
+            android:textSize="18sp">
+
+        </TextView>
+
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:id="@+id/idgrupoFloat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="70dp"
+            app:fab_addButtonColorNormal="@color/colorAccent"
+            app:fab_addButtonColorPressed="@color/colorAccent"
+            app:fab_labelStyle="@style/etiqueta">
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/idFloaPerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_colorNormal="@color/colorPrimaryDark"
+                app:fab_colorPressed="@color/colorPrimary"
+                app:fab_icon="@drawable/ic_person_24dp"
+                app:fab_size="mini"
+                app:fab_title="@string/text_perfil" />
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/idFloaTiket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_colorNormal="@color/colorPrimaryDark"
+                app:fab_colorPressed="@color/colorPrimary"
+                app:fab_icon="@drawable/ic_build_24dp"
+                app:fab_size="mini"
+                app:fab_title="@string/text_configuracion" />
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/idFloaSalir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_colorNormal="@color/colorPrimaryDark"
+                app:fab_colorPressed="@color/colorPrimary"
+                app:fab_icon="@drawable/ic_exit_24dp"
+                app:fab_size="mini"
+                app:fab_title="@string/text_salir" />
+
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+    </RelativeLayout>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="BottomAppBar" />
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnVehiculoFloat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/ic_car_black_24dp"
+        app:fab_title="Vehiculo"
+        app:fab_labelStyle="@style/etiqueta"
+        app:layout_anchor="@id/bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/bar"
+        tools:ignore="MissingConstraints" />
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnestacionamientosFloat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_call_black_24dp"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:fab_title="Estaciones"
+        app:fab_labelStyle="@style/etiqueta"
+        app:layout_anchor="@id/bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnVehiculoFloat"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnReservasFloat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_message"
+        app:backgroundTint="@color/EditTextColorVerde"
+        app:fab_labelStyle="@style/etiqueta"
+        app:fab_title="reserva"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnVehiculoFloat"
+        mapbox:layout_anchor="@id/bar"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

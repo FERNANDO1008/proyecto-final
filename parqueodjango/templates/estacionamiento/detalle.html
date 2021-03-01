@@ -1,0 +1,86 @@
+<div class="modal fade" id="detalle" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content " style="background: #EFF7F1">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title font-weight-bold" id="exampleModalScrollableTitle">Detalle sitio  Reservado<i class="fas fa-user-plus"></i></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="" id="errorF"></div>
+            <form id="idformulario" name="idformulario" method="POST" action="{% url 'activar_sitio' %}">{% csrf_token %}
+                <div class="modal-body">
+                    <input type="text" value="0" id="id_sitioTick1" name="id_sitioTick1">
+                    <div>
+                        <label class="badge badge-danger">Datos Cliente</label>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="">Cedula</label>
+                            <input type="text" class="form-control" id="cedulaClie" readonly>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="">Nombres</label>
+                            <input type="text" class="form-control" id="nombresClie" readonly>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="badge badge-danger">Datos Ticket</label>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="">Fecha Ingreso</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                <input type="text" class="form-control" id="fechaInicioClie" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group col-md">
+                            <label class="control-label" for="">Fecha Salida</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                <input type="text" class="form-control" id="fechaFinClie" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md">
+                            <label class="control-label" for="">Hora Ingreso</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-clock"></i></i></span>
+                                <input type="text" class="form-control" id="horaIngresoClie" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group col-md">
+                            <label class="control-label" for="Hora">Hora de salida</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-clock"></i></span>
+                                <input type="text" class="form-control" id="horaFinClie" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md">
+                            <label class="control-label" for="">Valor la Hora</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                                <input type="text" class="form-control" id="valorHoraClie" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group col-md">
+                            <label class="control-label" for="">Costo Total</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                                <input type="text" class="form-control" id="costoTotalClie">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" data-dismiss="modal" class="btn btn-danger">Cancelar</a>
+                    <button type="submit" class="btn btn-primary" id="btnGuardar">Activar Sitio</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

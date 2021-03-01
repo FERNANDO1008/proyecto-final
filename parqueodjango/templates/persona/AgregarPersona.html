@@ -1,0 +1,93 @@
+<div class="modal fade" id="agregarCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content " style="background: #EFF7F1">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title font-weight-bold" id="exampleModalScrollableTitle">Registro <i class="fas fa-user-plus"></i></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+         
+                <div class="modal-body">
+                   <form id="idformularioPersona" name="idformularioPersona" method="POST" action="{% url 'crearPersona' %}">{% csrf_token %}
+                    <div id="error"></div>
+                    <div class="info"></div>
+                    <div>
+                        <label class="badge badge-danger">Datos generales</label>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{f.cedula.name}}">{{f.cedula.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+                                {{f.cedula}}
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{f.nombres.name}}">{{f.nombres.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-info"></i></span>
+                                {{f.nombres}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{f.apellidos.name}}">{{f.apellidos.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-info"></i></span>
+                                {{f.apellidos}}
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{f.telefono.name}}">{{f.telefono.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                                {{f.telefono}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{f.direccion.name}}">{{f.direccion.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                {{f.direccion}}
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{f.celular.name}}">{{f.celular.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                                {{f.celular}}
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="badge badge-danger">Datos cuenta</span>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{fc.correo.name}}">{{fc.correo.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-at"></i></span>
+                                {{fc.correo}}
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{fc.clave.name}}">{{fc.clave.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-at"></i></span>
+                                {{fc.clave}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="{% url 'listaPersona' %}" class="btn btn-danger">Cancelar</a>
+                    <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

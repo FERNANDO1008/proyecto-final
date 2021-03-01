@@ -1,0 +1,72 @@
+<div class="modal fade" id="modificaPersona" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content " style="background: #EFF7F1">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title font-weight-bold" id="exampleModalScrollableTitle">Modificar <i class="fas fa-user-plus"></i></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            
+                <div class="modal-body">
+                <form id="idformularioPersonaM" name="idformularioPersonaM" method="POST" action="{% url 'modificarPersona' %}">{% csrf_token %}
+                    <div>
+                        <label class="badge badge-danger">Datos generales</label>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="cedulaM">Cedula</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+                                <input type="text" class="form-control" name="cedulaM" id="cedulaM" maxlength="10" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{fM.nombres.name}}">{{fM.nombres.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-info"></i></span>
+                                {{fM.nombres}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{fM.apellidos.name}}">{{fM.apellidos.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-info"></i></span>
+                                {{fM.apellidos}}
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{fM.telefono.name}}">{{fM.telefono.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                                {{fM.telefono}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{fM.direccion.name}}">{{fM.direccion.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                {{fM.direccion}}
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{fM.celular.name}}">{{fM.celular.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                                {{fM.celular}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="{% url 'listaPersona' %}" class="btn btn-danger btn-sm">Cancelar</a>
+                    <button type="submit" class="btn btn-success btn-sm" id="btnGuardar">Actualizar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

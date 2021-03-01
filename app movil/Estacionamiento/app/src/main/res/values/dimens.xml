@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_horizontal_login">32dp</dimen>
+    <dimen name="editText_testsize_login">22dp</dimen>
+    <dimen name="textsize_notieneCuenta">16sp</dimen>
+    <dimen name="editText_margin_CrearCuenta">10dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="height_cardview">200dp</dimen>
+    <dimen name="cornerradius_cardview">200dp</dimen>
+    <dimen name="textsize_nombreuser_card">25dp</dimen>
+    <dimen name="time_card_margin">5dp</dimen>
+    <dimen name="like_margin_top_card">10dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="appbar_padding">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+</resources>

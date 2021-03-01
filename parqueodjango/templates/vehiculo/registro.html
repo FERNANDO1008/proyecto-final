@@ -1,0 +1,50 @@
+<div class="modal fade" id="agregarVehiculo" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content " style="background: #EFF7F1">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title font-weight-bold" id="exampleModalScrollableTitle">Registro <i class="fas fa-user-plus"></i></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+             <form id="idformularioV" name="idformularioV" method="POST" action="">{% csrf_token %}
+                <div class="modal-body">
+                    <div id="error"></div>
+                    <div class="info"></div>
+                    <div>
+                        <label class="badge badge-danger">Datos generales</label>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{fc.nro_placa.name}}">{{fc.nro_placa.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+                                {{fc.nro_placa}}
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{fc.marca.name}}">{{fc.marca.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-info"></i></span>
+                                {{fc.marca}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="{{fc.color.name}}">{{fc.color.label}}</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-info"></i></span>
+                                {{fc.color}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="{% url 'vehiculo' cedulaP=dni %}" class="btn btn-danger">Cancelar</a>
+                    <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
